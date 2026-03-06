@@ -1,0 +1,42 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "tree-sitter-rustimate",
+      "camelcase": "TreeSitterRustimate",
+      "title": "TreeSitterRustimate",
+      "scope": "source.tree-sitter-rustimate",
+      "file-types": [
+        "rsl"
+      ],
+      "injection-regex": "^tree-sitter-rustimate$",
+      "class-name": "TreeSitterTreeSitterRustimate"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "Tree-sitter grammar for the Rustimate Studio Language (RSL), a DSL for code-based storytelling and presentations",
+    "authors": [
+      {
+        "name": "Rakesh Venkat",
+        "email": "qubitai.in@gmail.com",
+        "url": "https://qubitai.in"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/rvbug/tree-sitter-rustimate",
+      "funding": "https://ko-fi.com/rvbugged"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": false,
+    "java": false,
+    "node": true,
+    "python": false,
+    "rust": true,
+    "swift": false,
+    "zig": false
+  }
+}

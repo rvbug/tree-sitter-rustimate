@@ -1,0 +1,21 @@
+/build/
+/bin/
+/obj/
+/target/
+# Neovim doesn't need these bindings to run your grammar
+/bindings/
+/Cargo.toml
+/Cargo.lock
+/Makefile
+/CMakeLists.txt
+/binding.gyp
+# Intermediate generator files
+/src/grammar.json
+
+# Ignore compiled binaries
+/build/
+/bin/
+*.so
+*.dll
+*.dylib
+
