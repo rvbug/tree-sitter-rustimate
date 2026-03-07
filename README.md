@@ -61,12 +61,10 @@ Zed support is available via the Rustimate extension. For manual install:
 
 ### emacs
 
-```elisp
-
+```emacs-lisp
 (add-to-list 'treesit-language-source-alist
-             '(rustimate "[https://github.com/your-username/tree-sitter-rustimate](https://github.com/your-username/tree-sitter-rustimate)"))
+             '(rustimate "[https://github.com/rvbug/tree-sitter-rustimate](https://github.com/rvbugtree-sitter-rustimate)"))
 (treesit-install-language-grammar 'rustimate)
-
 ```
 
 # Future Support
