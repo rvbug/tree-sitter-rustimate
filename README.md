@@ -9,29 +9,25 @@ Tree-sitter grammar for **Rustimate Studio Language (RSL)**.
 Add the plugin to your configuration:
 
 ```lua
--- Add the parser to your runtimepath for highlights
-{ "rvbug/tree_sitter_rustimate" },
-
--- Configure nvim-treesitter to use the parser
 {
   "nvim-treesitter/nvim-treesitter",
+  dependencies = { "rvbug/tree-sitter-rustimate" },
   opts = function(_, opts)
     local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
     parser_config.rustimate = {
       install_info = {
-        url = "[https://github.com/rvbug/tree_sitter_rustimate](https://github.com/rvbug/tree_sitter_rustimate)",
+        url = "https://github.com/rvbug/tree-sitter-rustimate",
         files = { "src/parser.c" },
         branch = "main",
       },
       filetype = "rsl",
     }
-    
-    -- Add to ensure_installed
     if type(opts.ensure_installed) == "table" then
-        table.insert(opts.ensure_installed, "rustimate")
+      table.insert(opts.ensure_installed, "rustimate")
     end
   end,
 }
+
 ```
 
 
