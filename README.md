@@ -1,8 +1,11 @@
 # Rustimate Treesitter 
 
-Tree-sitter grammar for **Rustimate Studio Language (RSL)**.
+Tree-sitter grammar for **Rustimate Studio Language (RSL)**. Checkout [Rustimate](https://qubitai.in/rustimate.html)
 
-Checkout [Rustimate](https://qubitai.in/rustimate.html)
+
+<img width="606" height="422" alt="image" src="https://github.com/user-attachments/assets/4221719f-7d17-4a4b-8f33-dceb279e8fa5" />
+
+
 
 # Installation Instructions
 
@@ -10,7 +13,7 @@ Checkout [Rustimate](https://qubitai.in/rustimate.html)
 
 ### 1. Using [lazy.nvim](https://github.com/folke/lazy.nvim)
 
-Add the plugin to your configuration. 
+Add the plugin to your configuration and restart neovim. 
 
 NOTE: If you do not use `auto_install = true` then in your list of languages add `rustimate` in the `ensure_installed` block.
 
@@ -40,36 +43,20 @@ return {
   })
   end,
 }
-
 ```
 
-If Neovim is still not able to detect the `.rsl` then add this to the configuration
 
-```vim
-vim.filetype.add({
-  extension = {
-    rsl = "rsl",
-  },
-})
-
-local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
-parser_config.rustimate = {
-  install_info = {
-    url = "https://github.com/rvbug/tree-sitter-rustimate",
-    files = { "src/parser.c" },
-    branch = "main",
-  },
-  filetype = "rsl",
-}
-
-
-```
 
 
 
 ## Other Package Manager
 
 ```lua
+vim.filetype.add({
+  extension = {
+    rsl = "rsl",
+  },
+})
 local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
 parser_config.rustimate = {
   install_info = {
