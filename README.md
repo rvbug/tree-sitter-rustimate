@@ -32,7 +32,7 @@ Add the plugin to your configuration:
     end
   end,
 }
-
+```
 
 
 ### Helix
@@ -46,8 +46,9 @@ Add the plugin to your configuration:
    [[grammar]]
    name = "rustimate"
    source = { git = "[https://github.com/rvbug/tree-sitter-rustimate](https://github.com/rvbug/tree-sitter-rustimate)", rev = "main" }
+```
 
-2. Run hx --grammar fetch and hx --grammar build.
+2. Run `hx --grammar fetch` and `hx --grammar build`
 
 
 ###Zed
@@ -60,10 +61,13 @@ Zed support is available via the Rustimate extension. For manual install:
 
 ### emacs
 
+```elisp
+
 (add-to-list 'treesit-language-source-alist
              '(rustimate "[https://github.com/your-username/tree-sitter-rustimate](https://github.com/your-username/tree-sitter-rustimate)"))
 (treesit-install-language-grammar 'rustimate)
 
+```
 
 # Future Support
 
