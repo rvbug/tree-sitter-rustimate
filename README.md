@@ -1,6 +1,8 @@
 # Rustimate Treesitter 
 
-Tree-sitter grammar for **Rustimate Studio Language (RSL)**.. Checkout [Rustimate](rustimate | Animate Attention.) 
+Tree-sitter grammar for **Rustimate Studio Language (RSL)**.
+
+Checkout [Rustimate](https://qubitai.in/rustimate.html)
 
 # Installation Instructions
 
