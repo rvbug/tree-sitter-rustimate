@@ -1,8 +1,10 @@
-# tree_sitter_rustimate
+# Rustimate Treesitter 
 
-Tree-sitter grammar for **Rustimate Studio Language (RSL)**.
+Tree-sitter grammar for **Rustimate Studio Language (RSL)**.. Checkout [Rustimate](rustimate | Animate Attention.) 
 
-## Installation for Neovim
+# Installation Instructions
+
+## Neovim
 
 ### 1. Using [lazy.nvim](https://github.com/folke/lazy.nvim)
 
@@ -28,6 +30,21 @@ Add the plugin to your configuration:
   end,
 }
 
+```
+
+
+## Other Package Manager
+
+```lua
+local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+parser_config.rustimate = {
+  install_info = {
+    url = "https://github.com/rvbug/tree-sitter-rustimate",
+    files = { "src/parser.c" },
+    branch = "main",
+  },
+  filetype = "rsl",
+}
 ```
 
 
