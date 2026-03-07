@@ -48,10 +48,13 @@ parser_config.rustimate = {
 ```
 
 
-### Helix
+## Helix
 
 1. Add to `~/.config/helix/languages.toml`:
-   ```toml
+
+   
+```toml
+
    [[language]]
    name = "rustimate"
    file-types = ["rsl"]
@@ -59,12 +62,14 @@ parser_config.rustimate = {
    [[grammar]]
    name = "rustimate"
    source = { git = "[https://github.com/rvbug/tree-sitter-rustimate](https://github.com/rvbug/tree-sitter-rustimate)", rev = "main" }
+   
 ```
 
 2. Run `hx --grammar fetch` and `hx --grammar build`
 
 
-###Zed
+
+## Zed
 
 Zed support is available via the Rustimate extension. For manual install:
 
@@ -72,9 +77,9 @@ Zed support is available via the Rustimate extension. For manual install:
     2. In Zed, Extensions > Install Dev Extension > Select this folder.
 
 
-### emacs
+## emacs
 
-```emacs-lisp
+```elisp
 (add-to-list 'treesit-language-source-alist
              '(rustimate "[https://github.com/rvbug/tree-sitter-rustimate](https://github.com/rvbugtree-sitter-rustimate)"))
 (treesit-install-language-grammar 'rustimate)
