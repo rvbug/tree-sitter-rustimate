@@ -10,29 +10,61 @@ Checkout [Rustimate](https://qubitai.in/rustimate.html)
 
 ### 1. Using [lazy.nvim](https://github.com/folke/lazy.nvim)
 
-Add the plugin to your configuration:
+Add the plugin to your configuration. 
+
+NOTE: If you do not use `auto_install = true` then in your list of languages add `rustimate` in the `ensure_installed` block.
 
 ```lua
-{
+return {
   "nvim-treesitter/nvim-treesitter",
   dependencies = { "rvbug/tree-sitter-rustimate" },
-  opts = function(_, opts)
+  build = ":TSUpdate",
+
+  config = function()
+    local config = require("nvim-treesitter.configs")
     local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+
     parser_config.rustimate = {
       install_info = {
-        url = "https://github.com/rvbug/tree-sitter-rustimate",
-        files = { "src/parser.c" },
+        url = "https://github.com/rvbug/tree-sitter-rustimate.git",
+        files = { "src/parser.c" }, 
         branch = "main",
       },
       filetype = "rsl",
     }
-    if type(opts.ensure_installed) == "table" then
-      table.insert(opts.ensure_installed, "rustimate")
-    end
+  config.setup({
+       -- if you use auto_install then skip ensure_installed block
+        --auto_install = true,
+        ensure_installed = {
+          "rustimate",
+  })
   end,
 }
 
 ```
+
+If Neovim is still not able to detect the `.rsl` then add this to the configuration
+
+```vim
+vim.filetype.add({
+  extension = {
+    rsl = "rsl",
+  },
+})
+
+local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+parser_config.rustimate = {
+  install_info = {
+    url = "https://github.com/rvbug/tree-sitter-rustimate",
+    files = { "src/parser.c" },
+    branch = "main",
+  },
+  filetype = "rsl",
+}
+
+
+```
+
 
 
 ## Other Package Manager
@@ -86,6 +118,81 @@ Zed support is available via the Rustimate extension. For manual install:
              '(rustimate "[https://github.com/rvbug/tree-sitter-rustimate](https://github.com/rvbugtree-sitter-rustimate)"))
 (treesit-install-language-grammar 'rustimate)
 ```
+
+
+## Sublime Text
+
+```json
+{
+    "user_parsers": [
+        {
+            "name": "rustimate",
+            "repo": "https://github.com/rvbug/tree-sitter-rustimate",
+            "scopes": ["source.rsl"]
+        }
+    ]
+
+```
+
+
+
+## Vim
+If you use Vim, give this setup a try.
+
+```
+lua << EOF
+local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+
+-- 1. Register the parser
+parser_config.rustimate = {
+  install_info = {
+    url = "https://github.com/rvbug/tree-sitter-rustimate.git",
+    files = { "src/parser.c" },
+    branch = "main",
+  },
+  filetype = "rsl",
+}
+
+-- 2. Setup (Note: Ensure textobjects plugin is installed if using that block)
+require("nvim-treesitter.configs").setup({
+  ensure_installed = { "rustimate" },
+  highlight = { enable = true },
+  indent = { enable = true },
+  -- Textobjects requires 'nvim-treesitter/nvim-treesitter-textobjects'
+  textobjects = {
+    enable = true,
+    move = {
+      enable = true,
+      set_jumps = true,
+      goto_next_start = { ["]m"] = "@function.outer" },
+      goto_previous_start = { ["[m"] = "@function.outer" },
+    },
+  },
+})
+EOF
+
+```
+
+
+## Lapce
+
+```toml
+
+[language.rustimate]
+name = "rustimate"
+extensions = ["rsl"]
+grammar = "rustimate"
+
+[[grammar]]
+name = "rustimate"
+source = { git = "https://github.com/rvbug/tree-sitter-rustimate", rev = "main" }
+
+```
+
+
+
+
+
 
 # Future Support
 
