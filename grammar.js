@@ -4,7 +4,6 @@
  * @license MIT
  */
 
-
 /// <reference types="tree-sitter-cli" />
 
 export default grammar({
