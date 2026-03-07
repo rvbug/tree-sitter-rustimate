@@ -191,11 +191,16 @@ source = { git = "https://github.com/rvbug/tree-sitter-rustimate", rev = "main" 
 
 
 
+# Uninstall 
 
+```bash
+# Remove cloned repo 
+rm -rf ~/.local/share/nvim/lazy/tree-sitter-rustimate
 
+# Remove compiled binary 
+rm -f ~/.local/share/nvim/nvim-treesitter/parser/rustimate.so
 
-# Future Support
-
-A. Lapce
-B. Sublime Text
-C. Vim
+# If you use Mason, remove here too 
+rm -rf ~/.local/share/nvim/mason/packages/tree-sitter-rustimate
+```
+Finally in your treesitter neovim configuration , remove "rustimate" form list of languages
