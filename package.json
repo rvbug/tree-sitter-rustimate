@@ -1,11 +1,11 @@
 {
-  "name": "tree-sitter-tree-sitter-rustimate",
+  "name": "tree-sitter-rustimate",
   "version": "0.1.0",
   "description": "Tree-sitter grammar for the Rustimate Studio Language (RSL), a DSL for code-based storytelling and presentations",
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rvbug/tree_sitter_rustimate.git"
+    "url": "git+https://github.com/rvbug/tree-sitter-rustimate.git"
   },
   "funding": "https://ko-fi.com/rvbugged",
   "license": "MIT",
@@ -20,7 +20,7 @@
     "incremental",
     "parsing",
     "tree-sitter",
-    "tree_sitter_rustimate"
+    "tree-sitter-rustimate"
   ],
   "files": [
     "grammar.js",
