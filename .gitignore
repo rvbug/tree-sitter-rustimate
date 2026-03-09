@@ -1,21 +1,17 @@
-/build/
-/bin/
-/obj/
-/target/
-# Neovim doesn't need these bindings to run your grammar
-/bindings/
-/Cargo.toml
-/Cargo.lock
-/Makefile
-/CMakeLists.txt
-/binding.gyp
-# Intermediate generator files
-/src/grammar.json
+# build artifacts
+target/
+build/
+bin/
+obj/
 
-# Ignore compiled binaries
-/build/
-/bin/
+# generated parser artifacts
+src/parser.c
+src/node-types.json
+
+# compiled binaries
 *.so
 *.dll
 *.dylib
 
+# cargo lock only for applications
+Cargo.lock
