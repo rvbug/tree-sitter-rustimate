@@ -1,3 +1,11 @@
+# Archival Notice
+Life is meant to be enjoyed. Journey of an "iMonk" to an <b> "Intergalactic Traveler". 
+
+This repository is no longer maintained.
+
+<br>
+
+
 # Rustimate Treesitter 
 
 Tree-sitter grammar for **Rustimate Studio Language (RSL)**. Checkout [Rustimate](https://qubitai.in/rustimate.html)
